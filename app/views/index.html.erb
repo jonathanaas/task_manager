@@ -1,0 +1,24 @@
+<h1>Lista de Tarefas</h1>
+<%= link_to 'Nova Tarefa', new_task_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>URL</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+      <tr>
+        <td><%= task.url %></td>
+        <td><%= task.status %></td>
+        <td>
+          <%= link_to 'Editar', edit_task_path(task) %>
+          <%= link_to 'Excluir', task_path(task), method: :delete, data: { confirm: 'Tem certeza?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

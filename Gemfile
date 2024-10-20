@@ -59,3 +59,6 @@ end
 gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'rack-cors'
+gem 'devise'  # Para autenticação
+#gem 'httparty'  # Para comunicação HTTP com microserviços
+gem 'byebug', group: [:development, :test]

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: { registrations: 'authentication' }
   resources :tasks
+  root "tasks#index"
 
-  post '/register', to: 'authentication#register'
-  post '/login', to: 'authentication#login'
+  post 'login', to: 'authentication#login'
+  post 'register', to: 'authentication#register'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,3 +19,4 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 end
+
